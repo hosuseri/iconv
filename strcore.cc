@@ -19,7 +19,7 @@ void strcore::init()
 
 std::wstring strcore::load(const void *src, size_t len)
 {
-    const char *p = reinterpret_cast<const char *>(src);
+    char *p = const_cast<char *>(reinterpret_cast<const char *>(src));
     char *q = core;
     size_t m = len, n = coremax;
     /* int k = */ iconv(inp, &p, &m, &q, &n);
@@ -30,7 +30,7 @@ std::wstring strcore::load(const void *src, size_t len)
 
 void strcore::pack(std::wstring s)
 {
-    const char *p = reinterpret_cast<const char *>(s.data());
+    char *p = const_cast<char *>(reinterpret_cast<const char *>(s.data()));
     char *q = core;
     size_t m = s.length(), n = coremax;
     iconv(outp, &p, &m, &q, &n);

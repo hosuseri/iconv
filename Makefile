@@ -9,6 +9,7 @@ CC = gcc
 CXX = g++
 CFLAGS = -Wall -O0 -g
 CXXFLAGS = $(CFLAGS)
+LIBS = #-liconv
 
 all: $(TARGET)
 
@@ -16,7 +17,7 @@ clean:
 	rm -f $(TARGET) $(OBJS)
 
 $(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS) $(LIBS)
 
 $(TARGET2): $(OBJS2)
 	$(CCPLUS) $(CXXFLAGS) -o $(TARGET2) $(OBJS2)

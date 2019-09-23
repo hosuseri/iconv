@@ -8,7 +8,7 @@ void utf8core::init()
 {
     strcore::init();
     std::string endl = "\r\n";
-    const char *p = endl.c_str();
+    char *p = const_cast<char *>(endl.c_str());
     char *q = core;
     size_t m = endl.length(), n = coremax;
     iconv(inp, &p, &m, &q, &n);
