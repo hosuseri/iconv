@@ -1,10 +1,11 @@
 #ifndef __STRCORE_H__
 #define __STRCORE_H__
 
+#include <windows.h>
 #include <stdlib.h>
 #include <wchar.h>
-#include <iconv.h>
 #include <string>
+#include "winstr.h"
 
 class strcore {
 public:
@@ -17,10 +18,10 @@ public:
 
 protected:
     static const size_t coremax = 2048 * sizeof(wchar_t);
+    char core[coremax + sizeof(wchar_t)];
     size_t len;
-    char core[coremax];
-    iconv_t inp, outp;
     std::string dstname, srcname;
+    UINT dstcp, srccp;
 };
 
 #endif  /*  __STRCORE_H__ */

@@ -3,7 +3,8 @@ OBJS = \
 	main.o \
 	strcore.o \
 	utf8core.o \
-	cp932core.o
+	cp932core.o \
+	winstr.o
 
 CC = gcc
 CXX = g++
