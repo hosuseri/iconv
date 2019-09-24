@@ -34,6 +34,12 @@ int main(int argc, char *argv[])
 	std::cout << u << std::endl;
     }
     ifs.close();
+
+    ::MessageBoxW(
+	NULL,
+	core.load("終わったよ！").data(),
+	core.load("メッセージ").data(),
+	MB_OK);
     return 0;
 }
 
