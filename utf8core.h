@@ -6,6 +6,7 @@
 class utf8core : public strcore {
 public:
     utf8core();
+    void init();
 };
 
 #endif  /*  __UTF8CORE_H__ */

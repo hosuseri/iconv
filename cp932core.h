@@ -6,6 +6,7 @@
 class cp932core : public strcore {
 public:
     cp932core();
+    void init();
 };
 
 #endif  /*  __CP932CORE_H__ */

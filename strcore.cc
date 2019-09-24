@@ -16,13 +16,6 @@ void strcore::init()
 	;
     else
 	throw std::invalid_argument("dstname");
-
-    if (srcname == "UTF-8")
-	srccp = CP_UTF8;
-    else if (srcname == "cp932")
-	srccp = 932;
-    else
-	throw std::invalid_argument("srcname");
 }
 
 std::wstring strcore::load(const void *src, size_t len)
